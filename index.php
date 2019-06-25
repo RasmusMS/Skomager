@@ -1,11 +1,14 @@
 <?php
-?>
+require_once 'includes/header.php';
 
-<html>
-<head>
+$page .= ".php";
 
-</head>
-<body>
-<p>This working?</p>
-</body>
-</html>
+if(file_exists("pages/$page")){
+    include_once "pages/$page";
+}
+else {
+    include_once 'pages/404.php';
+}
+
+
+require_once 'includes/footer.php';
