@@ -11,23 +11,12 @@ $sql1 = "SELECT `id` FROM `shoesize` WHERE `size` = '$shoesize'";
 $result = $conn->query($sql1);
 $rowcount = $result->num_rows;
 
-if($rowcount > 1){
+if($rowcount < 1){
     $sql2 = "INSERT INTO `shoesize` (`size`) VALUES ('$shoesize')";
     $conn->query($sql2);
-    $result = $conn->query($sql1);
-    $row = $result->fetch_assoc();
-    $id = (int) $row['id'];
-    $mainSQL = "INSERT INTO `user` (`firstname`, `lastname`, `email`, `shoesize_id`) VALUES (\"$firstname\", \"$lastname\",\"$email\" , '$id')";
-    $conn->query($mainSQL);
-} elseif ($rowcount = 1) {
-    $result = $conn->query($sql1);
-    $row = $result->fetch_assoc();
-    $id = (int) $row['id'];
-    $mainSQL = "INSERT INTO `user` (`firstname`, `lastname`, `email`, `shoesize_id`) VALUES (\"$firstname\", \"$lastname\",\"$email\" , '$id')";
-    $conn->query($mainSQL);
-} else {
-    echo "wtf?";
 }
-
-//$row = $result->fetch_assoc();
-//$id = (int) $row['id'];
+$result = $conn->query($sql1);
+$row = $result->fetch_assoc();
+$id = (int) $row['id'];
+$mainSQL = "INSERT INTO `user` (`firstname`, `lastname`, `email`, `shoesize_id`) VALUES (\"$firstname\", \"$lastname\",\"$email\" , '$id')";
+$conn->query($mainSQL);
