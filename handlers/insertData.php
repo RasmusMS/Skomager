@@ -1,7 +1,6 @@
 <?php
 require_once '../includes/dbConnection.php';
 $conn = db_connect();
-$mysqli = db_connect();
 $i = 0;
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];

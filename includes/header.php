@@ -15,21 +15,21 @@ require_once 'settings.php';
 <body>
 <header>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php?page=register">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item <?php if($_GET['page'] == 'register') { echo "active"; }?>">
+                <a class="nav-link " href="index.php?page=register">Registrer</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?page=viewdata">Link</a>
+            <li class="nav-item <?php if($_GET['page'] == 'viewdata') { echo "active"; }?>">
+                <a class="nav-link" href="index.php?page=viewdata">Se data</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?page=graph">Disabled</a>
+            <li class="nav-item <?php if($_GET['page'] == 'graph') { echo "active"; }?>">
+                <a class="nav-link" href="index.php?page=graph">Se graf</a>
             </li>
         </ul>
     </div>
