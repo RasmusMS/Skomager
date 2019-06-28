@@ -1,1 +1,1 @@
-<?php
+<img src="http://xras38.skp-dp.sde.dk/Skomager/includes/image.php" alt="http://xras38.skp-dp.sde.dk/Skomager/includes/image.php">
