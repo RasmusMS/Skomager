@@ -17,5 +17,8 @@ if($rowcount < 1){
 $result = $conn->query($sql1);
 $row = $result->fetch_assoc();
 $id = (int) $row['id'];
-$mainSQL = "INSERT INTO `user` (`firstname`, `lastname`, `email`, `shoesize_id`) VALUES (\"$firstname\", \"$lastname\",\"$email\" , '$id')";
+$mainSQL = "INSERT INTO `user1` (`firstname`, `lastname`, `email`, `shoesize_id`) VALUES (\"$firstname\", \"$lastname\",\"$email\" , '$id')";
 $conn->query($mainSQL);
+
+echo "<script>window.alert('Data tilføjet');</script>";
+echo "<script>setTimeout(\"location.href = '../index.php?page=register';\",500);</script>";

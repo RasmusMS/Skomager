@@ -8,6 +8,6 @@ function db_connect()
     $database = "xras38_skp_dp_sde_dk";
 
     $mysqli = new mysqli($host, $user, $password, $database);
-    $mysqli->set_charset(utf8);
+    $mysqli->set_charset("utf8");
     return $mysqli;
 }
